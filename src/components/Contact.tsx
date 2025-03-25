@@ -62,7 +62,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
 
   return (
     <section id="contact" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2">
             <h1 className="text-3xl font-bold text-secondary mb-6">Get In Touch</h1>
@@ -94,7 +94,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-6 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
               
@@ -109,7 +109,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-6 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
               
@@ -123,7 +123,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-6 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
                 />
               </div>
               
@@ -138,14 +138,14 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
+                  className="w-full px-6 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"
                 ></textarea>
               </div>
               
               <button
                 type="submit"
                 disabled={submissionState === 'submitting'}
-                className="flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-opacity-90 transition disabled:bg-opacity-50"
+                className="flex items-center px-6 py-3 bg-accent text-black rounded-lg hover:bg-opacity-90 transition disabled:bg-opacity-50"
               >
                 {submissionState === 'submitting' ? (
                   <>

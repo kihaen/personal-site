@@ -33,14 +33,14 @@ const Portfolio: React.FC<PortfolioProps> = ({ data }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.projects.map((project) => {
-            const projectImage = `images/portfolio/${project.image}`;
-            
+            const projectImage = new URL(`../assets/projects/${project.image}`, import.meta.url).href
+            console.log(projectImage, project.image)
             return (
               <div key={project.title} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <img
                   src={projectImage}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform group-hover:scale-105"
+                  className="w-full h-100 object-cover transition-transform group-hover:scale-105"
                   loading="lazy"
                 />
                 

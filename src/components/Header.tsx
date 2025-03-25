@@ -34,8 +34,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'resume', label: 'Resume' },
-    { id: 'portfolio', label: 'Works' },
-    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'portfolio', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -51,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary bg-opacity-90 py-4">
+      <nav className="absolute top-0 left-0 right-0 z-50 bg-secondary bg-opacity-90 py-4">
         <div className="container mx-auto px-4">
           <ul className="flex justify-center space-x-8">
             {navLinks.map((link) => (

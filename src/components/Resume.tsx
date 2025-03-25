@@ -48,7 +48,7 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
         {/* Education Section */}
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/4">
-            <h1 className="text-2xl font-bold text-secondary border-b-2 border-accent pb-2">
+            <h1 className="text-2xl font-bold text-secondary">
               Education
             </h1>
           </div>
@@ -69,7 +69,7 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
         {/* Work Section */}
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/4">
-            <h1 className="text-2xl font-bold text-secondary border-b-2 border-accent pb-2">
+            <h1 className="text-2xl font-bold text-secondary">
               Work
             </h1>
           </div>
@@ -90,7 +90,7 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
         {/* Skills Section */}
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/4">
-            <h1 className="text-2xl font-bold text-secondary border-b-2 border-accent pb-2">
+            <h1 className="text-2xl font-bold text-secondary">
               Skills
             </h1>
           </div>
@@ -101,21 +101,16 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
             {/* Skill Bars */}
             <div className="mb-12">
               <h3 className="text-lg font-semibold mb-4 text-secondary">Proficiency</h3>
-              <ul className="space-y-4">
-                {skills.map((skill) => (
+              <ul className="flex gap-4 flex-row">
+                {skills.map((skill) => {
+                  console.log(skill)
+                  return (
                   <li key={skill.name}>
-                    <div className="flex justify-between mb-1">
+                    <div className="sm:flex-col ">
                       <span className="font-medium">{skill.name}</span>
-                      <span>{skill.level}</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div 
-                        className="bg-accent h-2.5 rounded-full" 
-                        style={{ width: skill.level }}
-                      ></div>
                     </div>
                   </li>
-                ))}
+                )})}
               </ul>
             </div>
             
@@ -123,13 +118,15 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-secondary">Technologies</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {skills.map((tech) => (
-                  <div key={tech.name} className="bg-white p-4 rounded-lg shadow-sm flex items-center space-x-3">
+                {skills.map((tech) => {
+                  const techImage = new URL(`../assets/tech/${tech.source}`, import.meta.url).href
+                  return (
+                  <div key={tech.name} className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center space-x-3">
                     {tech.source && (
                       <img 
-                        src={tech.source} 
+                        src={techImage} 
                         alt={tech.name}
-                        className="w-10 h-10 object-contain"
+                        className="w-20 h-20 object-contain my-10"
                         loading="lazy"
                       />
                     )}
@@ -140,7 +137,7 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
                       )}
                     </div>
                   </div>
-                ))}
+                )})}
               </div>
             </div>
           </div>
