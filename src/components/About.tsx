@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/4 flex justify-center">
             <img 
-              className="rounded-lg shadow-xl w-full max-w-xs" 
+              className="rounded-lg object-cover shadow-xl w-full max-w-md" 
               src={profilePic} 
               alt={`${name}'s Profile`}
               loading="lazy"

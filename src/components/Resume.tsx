@@ -98,46 +98,50 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
             {/* Skill Bars */}
             <div className="mb-12">
               <h3 className="text-lg font-semibold mb-4 text-secondary">Proficiency</h3>
-              <ul className="flex gap-4 flex-row">
+              <ul className="flex gap-4 flex-row justify-start flex-wrap">
                 {skills.map((skill) => {
                   return (
                   <li key={skill.name}>
                     <div className="sm:flex-col ">
-                      <span className="font-medium">{skill.name}</span>
+                      <span className="font-medium whitespace-nowrap">{skill.name}</span>
                     </div>
                   </li>
                 )})}
               </ul>
             </div>
-            
-            {/* Skill Cards */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-secondary">Technologies</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {skills.map((tech) => {
-                  const techImage = new URL(`../assets/tech/${tech.source}`, import.meta.url).href
-                  return (
-                  <div key={tech.name} className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center space-x-3">
-                    {tech.source && (
-                      <img 
-                        src={techImage} 
-                        alt={tech.name}
-                        className="w-20 h-20 object-contain my-10"
-                        loading="lazy"
-                      />
-                    )}
-                    <div>
-                      <h4 className="font-medium">{tech.name}</h4>
-                      {tech.description && (
-                        <p className="text-sm text-gray-600">{tech.description}</p>
+          </div>
+        </div>
+          {/* Tech Section */}
+          <div className="flex flex-col md:flex-row gap-8">
+            <div >
+              {/* Skill Cards */}
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-secondary">Technicals</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {skills.map((tech) => {
+                    const techImage = new URL(`../assets/tech/${tech.source}`, import.meta.url).href
+                    return (
+                    <div key={tech.name} className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center space-x-3">
+                      {tech.source && (
+                        <img 
+                          src={techImage} 
+                          alt={tech.name}
+                          className="w-20 h-20 object-contain my-10"
+                          loading="lazy"
+                        />
                       )}
+                      <div>
+                        <h4 className="font-medium">{tech.name}</h4>
+                        {tech.description && (
+                          <p className="text-sm text-gray-600">{tech.description}</p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                )})}
+                  )})}
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
