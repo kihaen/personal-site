@@ -36,11 +36,8 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
   if (!data) {
     return <section id="resume" className="py-20 bg-gray-50">Loading resume data...</section>;
   }
-  
 
   const { skillmessage, skills, education, work } = data;
-
-  console.log(skills)
 
   return (
     <section id="resume" className="py-20 bg-gray-50">
@@ -103,7 +100,6 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
               <h3 className="text-lg font-semibold mb-4 text-secondary">Proficiency</h3>
               <ul className="flex gap-4 flex-row">
                 {skills.map((skill) => {
-                  console.log(skill)
                   return (
                   <li key={skill.name}>
                     <div className="sm:flex-col ">

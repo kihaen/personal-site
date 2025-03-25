@@ -34,7 +34,6 @@ const Portfolio: React.FC<PortfolioProps> = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.projects.map((project) => {
             const projectImage = new URL(`../assets/projects/${project.image}`, import.meta.url).href
-            console.log(projectImage, project.image)
             return (
               <div key={project.title} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <img
