@@ -35,7 +35,11 @@ const Portfolio: React.FC<PortfolioProps> = ({ data }) => {
           {data.projects.map((project) => {
             const projectImage = new URL(`../assets/projects/${project.image}`, import.meta.url).href
             return (
-              <div key={project.title} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div key={project.title} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              
+              onClick={()=>{
+                window.location.href = project.url
+              }}>
                 <img
                   src={projectImage}
                   alt={project.title}
