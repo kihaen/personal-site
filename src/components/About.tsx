@@ -10,7 +10,6 @@ interface Address {
 
 interface AboutData {
   name: string;
-  image: string;
   bio: string;
   address: Address;
   phone: string;
@@ -27,8 +26,8 @@ const About: React.FC<AboutProps> = ({ data }) => {
     return <section id="about" className="py-20 bg-gray-50">Loading about data...</section>;
   }
 
-  const { name, image, bio, address: { city, state, zip }, email, resumedownload } = data;
-  const profilePic = `images/${image}`;
+  const { name, bio, address: { city, state, zip }, email, resumedownload } = data;
+  const profilePic = new URL('../assets/profilePic.jpg', import.meta.url).href
 
   return (
     <section id="about" className="py-20 bg-white">
